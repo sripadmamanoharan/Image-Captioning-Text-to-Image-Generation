@@ -1,0 +1,15 @@
+pandas
+spacy
+tqdm
+os
+numpy
+scikit-learn
+matplotlib
+torch
+torchvision
+torchtext
+Pillow
+transformers
+datasets
+timm
+jupyterlab

@@ -1,89 +1,34 @@
-# Image Captioning & Text-to-Image Generation  
-**Computer Vision + NLP Project | Team 10**  
-**By:** Sri Padmavathi Manoharan, Sashank Reddy Talakola, Sai Jahnavi Damacharla  
+# Image Captioning Project
 
----
+## Code Execution Steps
+1. We have used the Flickr30k dataset for training, so it is important that this dataset is present in executing the project code. The dataset is available on Kaggle in the [Link](https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset). Upon downloading the dataset place the dataset within the same direcory as the code files and make sure the folder will be named as `data`. Upon extracting the code files and data the folder structure should look like -
+```
+.
+├── data
+│   ├── flickr30k_images
+│   └── results.csv
+├── exp-baseline-12-layesr.ipynb
+├── exp-basline.ipynb
+├── exp-effb0.ipynb
+├── exp-effb1.ipynb
+├── exp-effb2.ipynb
+├── exp-effb3.ipynb
+├── exp-inc-v3.ipynb
+├── exp-inc-v4.ipynb
+├── exp-long-seq-baseline.ipynb
+├── exp-long-seq-resnet34.ipynb
+├── exp-small-vocab-12-layers.ipynb
+├── exp-small-vocab-baseline.ipynb
+├── exp-small-vocab-freq-filter.ipynb
+├── exp-swin.ipynb
+├── exp-vit.ipynb
+├── final-model.ipynb
+├── README.md
+└── requirements.txt
+```
 
-## Project Overview
+2. To run the program first make sure that the required packages are installed. The required packages are present in the file `requirements.txt`. To install the packages run the command - `pip3 install -r requirements.txt`.
 
-This project explores two major AI tasks:
-1. **Image Captioning:** Generating descriptive text from images using deep learning models.
-2. **Text-to-Image Generation:** Creating high-quality images from textual prompts using Stable Diffusion and CLIP.
+3. Upon installing the packages to run these files as they are present in Jupyter Notebook format you either use Jupyter Lab or Jupyter Notebook environment to execute the code. In the `requirements.txt` file we have mentioned the `jupyterlab` package, so I would recommend to run these notebooks in a Jupyter Lab environment. So to run the Jupyter Lab run command - `jupyter lab`
 
-Both tasks were implemented using the **Flickr30k** dataset, which contains over 31,000 images with multiple human-annotated captions.
-
----
-
-##  Objectives
-
-- Build a robust image captioning model using **ResNet-34 + Transformer decoder**.
-- Generate realistic images from text using **Stable Diffusion** guided by **CLIP embeddings**.
-- Evaluate both systems using metrics like **BLEU**, **FID**, and **CLIP Similarity Score**.
-
----
-
-##  Image Captioning
-
-### 🔨 Methodology
-- **Feature Extraction:** ResNet-34, EfficientNet, ViT, Swin Transformer
-- **Captioning Models:** LSTM, GRU, Transformer decoder
-- **Attention Mechanism:** Used to focus on key image regions
-- **Evaluation:** BLEU Score (Best: **0.309**)
-
-###  Example Output
-**Input:** 🐶 A dog jumping over a hurdle  
-**Generated Caption:** "A brown dog jumps over a hurdle"
-
----
-
-##  Text-to-Image Generation
-
-### ⚙️ Methodology
-- **Architecture:** CLIP (text encoding) + Stable Diffusion (image synthesis)
-- **Training:** Fine-tuned using Flickr30k captions and images
-- **Evaluation Metrics:**  
-  - Inception Score (IS)  
-  - Frechet Inception Distance (FID)  
-  - CLIP Similarity Score
-
-### Sample Prompts
-- "A man in a red shirt standing on a grassy hill" → 🧍‍♂️🌿  
-- "A group of people playing soccer in a park" → ⚽🏃‍♀️🏃‍♂️
-
----
-
-##  Results Summary
-
-| Task                   | Best Model/Method       | Score     |
-|------------------------|-------------------------|-----------|
-| Image Captioning       | ResNet-34 + Transformer | BLEU: 0.309 |
-| Text-to-Image Gen.     | CLIP + Stable Diffusion | Strong CLIP Similarity |
-
----
-
-##  Key Learnings
-
-- **Transformer decoders** outperform LSTMs and GRUs in long-sequence captioning.
-- **Vocabulary tuning** and **sequence length optimization** significantly impact performance.
-- **CLIP + Diffusion** models generate semantically rich images from text with great diversity.
-
----
-
-## Tools & Technologies
-
-- Python  
-- PyTorch  
-- HuggingFace Transformers  
-- Stable Diffusion  
-- CLIP (OpenAI)  
-- Flickr30k Dataset  
-- BLEU / FID / CLIP Similarity
-
----
-
-## Team Contributions
-
-- **Sri Padmavathi Manoharan** – Image captioning (Transformer), attention mechanism, BLEU evaluation  
-- **Sashank Reddy Talakola** – Feature extraction models, Stable Diffusion implementation  
-- **Sai Jahnavi Damacharla** – Text preprocessing, CLIP embeddings, evaluation metrics  
-
+4. You can run the cells and after the model training is complete you should see the resulting weights file (`.pth`) and execution runs generated captions
